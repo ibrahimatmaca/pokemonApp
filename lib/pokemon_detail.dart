@@ -65,7 +65,18 @@ class PokemonDetail extends StatelessWidget {
         pokemonWeaknessesFilterChipRow,
         Text("Next Evulations",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-        pokemonNextEvolutionFilterChipRow,
+        pokemon!.nextEvolution == null
+            ? FilterChip(
+                backgroundColor: Colors.white,
+                label: Text(
+                  "Last Evulation",
+                  style: TextStyle(
+                      color: Colors.redAccent,
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal),
+                ),
+                onSelected: (b) {})
+            : pokemonNextEvolutionFilterChipRow,
       ],
     );
   }
